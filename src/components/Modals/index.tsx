@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { Wrapper, Close, Inner } from './styles';
 
 interface ModalProps {
@@ -26,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({ show, children, maxWidth, handleClose, ..
     return show ? (
         <Wrapper role="dialog" aria-modal="true" maxWidth={maxWidth} data-testid="modal" {...props}>
             <Close aria-label="Close Modal" data-testid="modal-close" onClick={() => handleClose()}>
-                X
+                Close
             </Close>
             <Inner>{children}</Inner>
         </Wrapper>

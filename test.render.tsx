@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { mockRouter } from './__mocks__/NextRouter';
 import { reducer } from './src/store';
-import { GlobalStyle } from './src/styles/global';
+import { productsApi } from './src/store/api/products';
 type DefaultParams = Parameters<typeof defaultRender>;
 type RenderUI = DefaultParams[0];
 type RenderOptions = DefaultParams[1] & { router?: Partial<NextRouter> };
@@ -20,11 +20,7 @@ const customRender = (
         preloadedState = {},
         store = configureStore({
             reducer,
-            middleware: (getDefaultMiddleware) =>
-                getDefaultMiddleware()
-                    .concat
-                    // api middleware
-                    (),
+            middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend().concat(productsApi.middleware),
             preloadedState,
         }),
         ...renderOptions
@@ -34,10 +30,7 @@ const customRender = (
     const Providers = ({ children }) => (
         <Provider store={store}>
             <ThemeProvider theme={{}}>
-                <RouterContext.Provider value={{ ...mockRouter, ...router }}>
-                    <GlobalStyle />
-                    {children}
-                </RouterContext.Provider>
+                <RouterContext.Provider value={{ ...mockRouter, ...router }}>{children}</RouterContext.Provider>
             </ThemeProvider>
         </Provider>
     );

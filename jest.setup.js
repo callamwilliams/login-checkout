@@ -14,15 +14,19 @@ beforeAll(async () => {
 
 afterEach(() => fetchMock.resetMocks());
 
-export const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+jest.mock('react-toastify', () => {
+    // needed because your ToastContainer mock use jsx
+    const React = require('react');
+    const actual = jest.requireActual('react-toastify');
+    Object.assign(actual, {
+        toast: jest.fn(),
+        ToastContainer: jest.fn(() => <div />),
+    });
+    return actual;
+});
 
-beforeEach(() => {
-    useRouter.mockImplementation(() => ({
-        route: '/',
-        pathname: '/',
-        query: '',
-        asPath: '',
-    }));
+Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
+    set: () => {},
 });
 
 jest.mock('next/router', () => ({

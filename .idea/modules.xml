@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/peddler.iml" filepath="$PROJECT_DIR$/.idea/peddler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/login-checkout.iml" filepath="$PROJECT_DIR$/.idea/login-checkout.iml" />
     </modules>
   </component>
 </project>

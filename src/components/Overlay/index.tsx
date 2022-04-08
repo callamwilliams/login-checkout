@@ -7,7 +7,7 @@ interface OverlayProps {
     opacity?: number;
 }
 
-const Overlay: React.FC<OverlayProps> = ({ handleClick, children, opacity, ...props }) => (
+const Overlay: React.FC<OverlayProps> = ({ handleClick, children, opacity = 0.5, ...props }) => (
     <Wrapper opacity={opacity} onClick={handleClick} data-testid="Overlay" {...props}>
         {children}
     </Wrapper>

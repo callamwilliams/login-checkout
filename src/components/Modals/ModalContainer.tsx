@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Modal from './';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 import { ModalTypes } from '../../enums/ModalTypes';
@@ -9,6 +8,8 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import { getActiveModal } from '../../store/selectors/modals';
 import { modalActions } from '../../store/slices/modals/actions';
 import { Portal } from '../Portal';
+
+import Modal from './';
 
 interface ModalContainerProps {
     modals: Array<IModal>;

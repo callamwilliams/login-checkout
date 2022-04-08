@@ -27,8 +27,8 @@ module.exports = {
     moduleDirectories: ['node_modules', 'src'],
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-            '<rootDir>/__mocks__/fileMock.js',
-        '\\.svg': '<rootDir>/__mocks__/svgMock.js',
+            '<rootDir>/__mocks__/fileMock.ts',
+        '\\.svg': '<rootDir>/__mocks__/svgMock.ts',
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
         '^./react': path.resolve(__dirname, 'node_modules/react'),
         '^./react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
@@ -51,8 +51,10 @@ module.exports = {
         '!./src/pages/api/**/*.(ts|js)',
         '!./src/pages/**/_app.tsx',
         '!./src/pages/**/_error.tsx',
+        '!./src/pages/**/404.tsx',
         '!./src/pages/**/_document.tsx',
         '!./src/components/Portal.tsx',
+        '!./src/components/Modals/ModalContainer.tsx',
         '!./src/utils/redirectUser.ts',
         '!./src/utils/isProduction.ts',
         '!./**/styles.(js|jsx|ts|tsx)',

@@ -46,10 +46,10 @@ module.exports = withPlugins(
         serverRuntimeConfig: {},
         publicRuntimeConfig: {},
         env: {
-            API_ENDPOINT: process.env.API_ENDPOINT,
+            NEXTAUTH_URL: 'https://localhost:3000/api/auth',
         },
         images: {
-            domains: ['localhost'],
+            domains: ['localhost', 'fakestoreapi.com'],
         },
         experimental: {
             outputStandalone: true,

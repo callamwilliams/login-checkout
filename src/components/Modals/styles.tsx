@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Heading = styled.h2<{ theme }>`
-    color: ${({ theme }) => theme.colors.primary};
     padding: 1.5625rem 0;
     margin: 0;
     border-radius: 0.625rem 0.625rem 0 0;
@@ -18,10 +17,10 @@ export const Wrapper = styled.div<{ maxWidth: string }>`
     max-height: 50vh;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    background: ${({ theme }) => theme.colors.neutral.white};
+    background: #ffffff;
     z-index: 5;
 
-    @media (min-width: ${({ theme }) => theme.viewport.md}) {
+    @media (min-width: 50.0625rem) {
         top: 50%;
         bottom: auto;
         left: 50%;
@@ -35,23 +34,22 @@ export const Wrapper = styled.div<{ maxWidth: string }>`
 
 export const Close = styled.div`
     position: relative;
-    width: 100%;
     display: flex;
-    align-items: center;
+    margin-left: auto;
     padding: 1.5625rem 1.5rem 1.5625rem 0;
-
-    svg {
-        margin-left: auto;
-        width: 0.8438rem;
-        height: 0.8438rem;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
+    cursor: pointer;
 `;
 
 export const Inner = styled.div`
     padding: 0 1.5rem 2.5rem;
     overflow-y: auto;
+`;
+
+export const Cart = styled.div``;
+
+export const CartItem = styled.div`
+    h3 {
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
 `;

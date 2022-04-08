@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
                     <Html lang="en">
                         {initialProps.styles}
                         {sheet.getStyleElement()}
-                        <div id="modal" />
+                        <div id="modal-container" />
                     </Html>
                 ),
             };
@@ -34,8 +34,10 @@ export default class MyDocument extends Document {
         return (
             <html>
                 <Head>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
                         rel="stylesheet"
                     />
                 </Head>

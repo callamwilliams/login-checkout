@@ -2,11 +2,15 @@ import { AsyncThunk } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { combineReducers } from 'redux';
 
+import { productsApi } from './api/products';
 import { AppStore } from './configureStore';
+import cartSlice from './slices/cart/slice';
 import modalsSlice from './slices/modals/slice';
 
 export const reducer = combineReducers({
+    [productsApi.reducerPath]: productsApi.reducer,
     modals: modalsSlice,
+    cart: cartSlice,
 });
 
 export type RootState = ReturnType<typeof reducer>;
