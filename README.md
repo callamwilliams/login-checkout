@@ -13,6 +13,13 @@ u: `mor_2314`
 
 p: `83r5^_`
 
+For tests
+
+```bash
+npm run test
+```
+
+
 ## Decisions
 
 - [next-auth](https://next-auth.js.org) - for login authentication
