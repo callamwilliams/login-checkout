@@ -4,9 +4,7 @@ import fetchMock from 'jest-fetch-mock';
 
 import { mockData } from '../__mocks__/mockData';
 import CategoriesPage from '../src/pages/[categories]';
-import { productsApi, useGetAllCategoriesQuery } from '../src/store/api/products';
-import { setupApiStore } from '../src/utils/setupApiStore';
-import { render, screen, renderHook, fireEvent, waitFor } from '../test.render';
+import { render, screen, waitFor } from '../test.render';
 
 jest.mock('next/router', () => ({ push: jest.fn(), replace: jest.fn() }));
 jest.mock('next-auth/react');
